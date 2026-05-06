@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amarodex</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Importante: Verifique se o link da fonte Bungee está aqui no Head também -->
+</head>
+<body>
+    <br><br>
+    
+    <div class="header-container">
+        <h1 class="logo-box">
+            Amar<img src="masterbal.png" alt="Master Ball" class="logo-img">déx
+        </h1>        
+    </div>
+
+    <div class="main-content">
+        <!-- Bloco de Pokémons -->
+        <details class="menu-section">
+            <summary> POKÉMONS </summary>
+            
+            <div class="filter-container">
+                <label for="geracao">Escolha a Geração: </label>
+                <select id="geracao" class="select-style">
+                    <option value="1">Geração 1 (Kanto)</option>
+                    <option value="2">Geração 2 (Johto)</option>
+                    <option value="3">Geração 3 (Hoenn)</option>
+                    <option value="4">Geração 4 (Sinnoh)</option>
+                    <option value="5">Geração 5 (Unova)</option>
+                    <option value="6">Geração 6 (Kalos)</option>
+                    <option value="7">Geração 7 (Alola)</option>
+                    <option value="8">Geração 8 (Galar)</option>
+                    <option value="9">Geração 9 (Paldea)</option>
+                    <option value="todas">Todas as gerações </option>
+                </select>
+            </div>
+
+            <!-- GRID DE POKEMONS -->
+            <!-- GRID DE POKEMONS — começa vazia, o JS preenche -->
+<div class="pokemon-grid" id="pokemon-grid">
+    <p id="loading-msg" style="font-family: sans-serif; color: #333; padding: 20px;">
+        Carregando Pokédex... aguarde 🔄
+    </p>
+</div>
+
+        <!-- Bloco de natures -->
+        <details class="menu-section">
+            <summary> NATUREZAS E TIPOS </summary>
+            <h3>Aqui ficará a lista de naturezas e fraquezas</h3>
+        </details>
+    </div>
+
+    <!-- Script de filtragem que discutimos antes deve vir aqui -->
+</body>
+</html>
+    <div class="main-content">
+    <!-- DAMAGE CALCULATOR -->
+    <details class="menu-section">
+        <summary>
+            <a href="https://nerd-of-now.github.io/NCP-VGC-Damage-Calculator/" target="_blank">DAMAGE CALCULATOR</a>
+        </summary>
+    </details>
+
+    <!-- VGC EXTRAS -->
+    <details class="menu-section">
+        <summary>VGC EXTRAS</summary>
+        
+        <h3>Onde achar campeonatos: 
+            <a href="https://play.pokemon.com/pt-br/local-tournaments/" target="_blank">Locais</a>
+        </h3>
+        
+        <h3>Onde jogar o competitivo: 
+            <a href="https://play.pokemonshowdown.com" target="_blank">Showdown</a>
+        </h3>
+        
+        <h3>Guia de fraquezas:</h3>
+        
+        <div class="table-wrapper">
+            <table class="roundy" style="border: 2px solid #111; background:#555;">
+                <!-- O conteúdo da sua tabela (<tbody>) continua exatamente o mesmo aqui dentro -->
+                <tbody>
+                    <table class="roundy" style="border: 2px solid #111; background:#555; margin-right: 5px; margin-bottom: 5px">
+
+<tbody><tr>
+<th colspan="2" rowspan="2" style="color:#FFF;">×
+</th>
+<th colspan="18" style="border-top-right-radius: 5px; -moz-border-radius-topright: 5px; -webkit-border-top-right-radius: 5px; -khtml-border-top-right-radius: 5px; -icab-border-top-right-radius: 5px; -o-border-top-right-radius: 5px; background:#4C4BA4; color:#FFF; font-size:90%">Defending type
+</th></tr>
+<tr>
+<th style="background:#9FA19F; width:48px"><a href="/wiki/Normal_(type)" title="Normal (type)"><span style="color:#fff;">Normal</span></a>
+</th>
+<th style="background:#FF8000; width:48px"><a href="/wiki/Fighting_(type)" title="Fighting (type)"><span style="color:#fff;">Fighting</span></a>
+</th>
+<th style="background:#81B9EF; width:48px"><a href="/wiki/Flying_(type)" title="Flying (type)"><span style="color:#fff;">Flying</span></a>
+</th>
+<th style="background:#9141CB; width:48px"><a href="/wiki/Poison_(type)" title="Poison (type)"><span style="color:#fff;">Poison</span></a>
+</th>
+<th style="background:#915121; width:48px"><a href="/wiki/Ground_(type)" title="Ground (type)"><span style="color:#fff;">Ground</span></a>
+</th>
+<th style="background:#AFA981; width:48px"><a href="/wiki/Rock_(type)" title="Rock (type)"><span style="color:#fff;">Rock</span></a>
+</th>
+<th style="background:#91A119; width:48px"><a href="/wiki/Bug_(type)" title="Bug (type)"><span style="color:#fff;">Bug</span></a>
+</th>
+<th style="background:#704170; width:48px"><a href="/wiki/Ghost_(type)" title="Ghost (type)"><span style="color:#fff;">Ghost</span></a>
+</th>
+<th style="background:#60A1B8; width:48px"><a href="/wiki/Steel_(type)" title="Steel (type)"><span style="color:#fff;">Steel</span></a>
+</th>
+<th style="background:#E62829; width:48px"><a href="/wiki/Fire_(type)" title="Fire (type)"><span style="color:#fff;">Fire</span></a>
+</th>
+<th style="background:#2980EF; width:48px"><a href="/wiki/Water_(type)" title="Water (type)"><span style="color:#fff;">Water</span></a>
+</th>
+<th style="background:#3FA129; width:48px"><a href="/wiki/Grass_(type)" title="Grass (type)"><span style="color:#fff;">Grass</span></a>
+</th>
+<th style="background:#FAC000; width:48px"><a href="/wiki/Electric_(type)" title="Electric (type)"><span style="color:#fff;">Electric</span></a>
+</th>
+<th style="background:#EF4179; width:48px"><a href="/wiki/Psychic_(type)" title="Psychic (type)"><span style="color:#fff;">Psychic</span></a>
+</th>
+<th style="background:#3DCEF3; width:48px"><a href="/wiki/Ice_(type)" title="Ice (type)"><span style="color:#fff;">Ice</span></a>
+</th>
+<th style="background:#5060E1; width:48px"><a href="/wiki/Dragon_(type)" title="Dragon (type)"><span style="color:#fff;">Dragon</span></a>
+</th>
+<th style="background:#624D4E; width:48px"><a href="/wiki/Dark_(type)" title="Dark (type)"><span style="color:#fff;">Dark</span></a>
+</th>
+<th style="background:#EF70EF; width:48px"><a href="/wiki/Fairy_(type)" title="Fairy (type)"><span style="color:#fff;">Fairy</span></a>
+</th></tr>
+<tr style="text-align:center; background:#FFF; font-size:90%">
+<th rowspan="18" style="background:#A44C4B; min-width:1.5em; color: #FFF;"><div style="writing-mode:sideways-lr">Attacking type</div>
+</th>
+<th style="background:#9FA19F; width:48px"><a href="/wiki/(type)" class="mw-redirect" title="(type)"><span style="color:#fff;">Normal</span></a>
+</th>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td>1×
+</td>
+<td style="background:#000; color:#FFF; font-size:90%">0×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td></tr>
+<tr style="text-align:center; background:#FFF; font-size:90%">
+<th style="background:#FF8000; width:48px"><a href="/wiki/Fighting_(type)" title="Fighting (type)"><span style="color:#fff;">Fighting</span></a>
+</th>
+<td style="background:#090; color:#FFF; font-size:90%">2×
+</td>
+<td>1×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td>1×
+</td>
+<td style="background:#090; color:#FFF; font-size:90%">2×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td style="background:#000; color:#FFF; font-size:90%">0×
+</td>
+<td style="background:#090; color:#FFF; font-size:90%">2×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td style="background:#090; color:#FFF; font-size:90%">2×
+</td>
+<td>1×
+</td>
+<td style="background:#090; color:#FFF; font-size:90%">2×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td></tr>
+<tr style="text-align:center; background:#FFF; font-size:90%">
+<th style="background:#81B9EF; width:48px"><a href="/wiki/Flying_(type)" title="Flying (type)"><span style="color:#fff;">Flying</span></a>
+</th>
+<td>1×
+</td>
+<td style="background:#090; color:#FFF; font-size:90%">2×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td style="background:#090; color:#FFF; font-size:90%">2×
+</td>
+<td>1×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td style="background:#090; color:#FFF; font-size:90%">2×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td></tr>
+<tr style="text-align:center; background:#FFF; font-size:90%">
+<th style="background:#9141CB; width:48px"><a href="/wiki/Poison_(type)" title="Poison (type)"><span style="color:#fff;">Poison</span></a>
+</th>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td>1×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td style="background:#000; color:#FFF; font-size:90%">0×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td style="background:#090; color:#FFF; font-size:90%">2×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td style="background:#090; color:#FFF; font-size:90%">2×
+</td></tr>
+<tr style="text-align:center; background:#FFF; font-size:90%">
+<th style="background:#915121; width:48px"><a href="/wiki/Ground_(type)" title="Ground (type)"><span style="color:#fff;">Ground</span></a>
+</th>
+<td>1×
+</td>
+<td>1×
+</td>
+<td style="background:#000; color:#FFF; font-size:90%">0×
+</td>
+<td style="background:#090; color:#FFF; font-size:90%">2×
+</td>
+<td>1×
+</td>
+<td style="background:#090; color:#FFF; font-size:90%">2×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td>1×
+</td>
+<td style="background:#090; color:#FFF; font-size:90%">2×
+</td>
+<td style="background:#090; color:#FFF; font-size:90%">2×
+</td>
+<td>1×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td style="background:#090; color:#FFF; font-size:90%">2×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td></tr>
+<tr style="text-align:center; background:#FFF; font-size:90%">
+<th style="background:#AFA981; width:48px"><a href="/wiki/Rock_(type)" title="Rock (type)"><span style="color:#fff;">Rock</span></a>
+</th>
+<td>1×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td style="background:#090; color:#FFF; font-size:90%">2×
+</td>
+<td>1×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td>1×
+</td>
+<td style="background:#090; color:#FFF; font-size:90%">2×
+</td>
+<td>1×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td style="background:#090; color:#FFF; font-size:90%">2×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td style="background:#090; color:#FFF; font-size:90%">2×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td></tr>
+<tr style="text-align:center; background:#FFF; font-size:90%">
+<th style="background:#91A119; width:48px"><a href="/wiki/Bug_(type)" title="Bug (type)"><span style="color:#fff;">Bug</span></a>
+</th>
+<td>1×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td>1×
+</td>
+<td style="background:#090; color:#FFF; font-size:90%">2×
+</td>
+<td>1×
+</td>
+<td style="background:#090; color:#FFF; font-size:90%">2×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td style="background:#090; color:#FFF; font-size:90%">2×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td></tr>
+<tr style="text-align:center; background:#FFF; font-size:90%">
+<th style="background:#704170; width:48px"><a href="/wiki/Ghost_(type)" title="Ghost (type)"><span style="color:#fff;">Ghost</span></a>
+</th>
+<td style="background:#000; color:#FFF; font-size:90%">0×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td style="background:#090; color:#FFF; font-size:90%">2×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td style="background:#090; color:#FFF; font-size:90%">2×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td>1×
+</td></tr>
+<tr style="text-align:center; background:#FFF; font-size:90%">
+<th style="background:#60A1B8; width:48px"><a href="/wiki/Steel_(type)" title="Steel (type)"><span style="color:#fff;">Steel</span></a>
+</th>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td style="background:#090; color:#FFF; font-size:90%">2×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td>1×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td>1×
+</td>
+<td style="background:#090; color:#FFF; font-size:90%">2×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td style="background:#090; color:#FFF; font-size:90%">2×
+</td></tr>
+<tr style="text-align:center; background:#FFF; font-size:90%">
+<th style="background:#E62829; width:48px"><a href="/wiki/Fire_(type)" title="Fire (type)"><span style="color:#fff;">Fire</span></a>
+</th>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td style="background:#090; color:#FFF; font-size:90%">2×
+</td>
+<td>1×
+</td>
+<td style="background:#090; color:#FFF; font-size:90%">2×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td style="background:#090; color:#FFF; font-size:90%">2×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td style="background:#090; color:#FFF; font-size:90%">2×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td>1×
+</td>
+<td>1×
+</td></tr>
+<tr style="text-align:center; background:#FFF; font-size:90%">
+<th style="background:#2980EF; width:48px"><a href="/wiki/Water_(type)" title="Water (type)"><span style="color:#fff;">Water</span></a>
+</th>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td style="background:#090; color:#FFF; font-size:90%">2×
+</td>
+<td style="background:#090; color:#FFF; font-size:90%">2×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td style="background:#090; color:#FFF; font-size:90%">2×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td>1×
+</td>
+<td>1×
+</td></tr>
+<tr style="text-align:center; background:#FFF; font-size:90%">
+<th style="background:#3FA129; width:48px"><a href="/wiki/Grass_(type)" title="Grass (type)"><span style="color:#fff;">Grass</span></a>
+</th>
+<td>1×
+</td>
+<td>1×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td style="background:#090; color:#FFF; font-size:90%">2×
+</td>
+<td style="background:#090; color:#FFF; font-size:90%">2×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td>1×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td style="background:#090; color:#FFF; font-size:90%">2×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td>1×
+</td>
+<td>1×
+</td></tr>
+<tr style="text-align:center; background:#FFF; font-size:90%">
+<th style="background:#FAC000; width:48px"><a href="/wiki/Electric_(type)" title="Electric (type)"><span style="color:#fff;">Electric</span></a>
+</th>
+<td>1×
+</td>
+<td>1×
+</td>
+<td style="background:#090; color:#FFF; font-size:90%">2×
+</td>
+<td>1×
+</td>
+<td style="background:#000; color:#FFF; font-size:90%">0×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td style="background:#090; color:#FFF; font-size:90%">2×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td>1×
+</td>
+<td>1×
+</td></tr>
+<tr style="text-align:center; background:#FFF; font-size:90%">
+<th style="background:#EF4179; width:48px"><a href="/wiki/Psychic_(type)" title="Psychic (type)"><span style="color:#fff;">Psychic</span></a>
+</th>
+<td>1×
+</td>
+<td style="background:#090; color:#FFF; font-size:90%">2×
+</td>
+<td>1×
+</td>
+<td style="background:#090; color:#FFF; font-size:90%">2×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td style="background:#000; color:#FFF; font-size:90%">0×
+</td>
+<td>1×
+</td></tr>
+<tr style="text-align:center; background:#FFF; font-size:90%">
+<th style="background:#3DCEF3; width:48px"><a href="/wiki/Ice_(type)" title="Ice (type)"><span style="color:#fff;">Ice</span></a>
+</th>
+<td>1×
+</td>
+<td>1×
+</td>
+<td style="background:#090; color:#FFF; font-size:90%">2×
+</td>
+<td>1×
+</td>
+<td style="background:#090; color:#FFF; font-size:90%">2×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td style="background:#090; color:#FFF; font-size:90%">2×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td style="background:#090; color:#FFF; font-size:90%">2×
+</td>
+<td>1×
+</td>
+<td>1×
+</td></tr>
+<tr style="text-align:center; background:#FFF; font-size:90%">
+<th style="background:#5060E1; width:48px"><a href="/wiki/Dragon_(type)" title="Dragon (type)"><span style="color:#fff;">Dragon</span></a>
+</th>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td style="background:#090; color:#FFF; font-size:90%">2×
+</td>
+<td>1×
+</td>
+<td style="background:#000; color:#FFF; font-size:90%">0×
+</td></tr>
+<tr style="text-align:center; background:#FFF; font-size:90%">
+<th style="background:#624D4E; width:48px"><a href="/wiki/Dark_(type)" title="Dark (type)"><span style="color:#fff;">Dark</span></a>
+</th>
+<td>1×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td style="background:#090; color:#FFF; font-size:90%">2×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td style="background:#090; color:#FFF; font-size:90%">2×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td></tr>
+<tr style="text-align:center; background:#FFF; font-size:90%">
+<th style="background:#EF70EF; width:48px"><a href="/wiki/Fairy_(type)" title="Fairy (type)"><span style="color:#fff;">Fairy</span></a>
+</th>
+<td>1×
+</td>
+<td style="background:#090; color:#FFF; font-size:90%">2×
+</td>
+<td>1×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td style="background:#F00; color:#FFF; font-size:90%">½×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td>1×
+</td>
+<td style="background:#090; color:#FFF; font-size:90%">2×
+</td>
+<td style="background:#090; color:#FFF; font-size:90%">2×
+</td>
+<td>1×
+</td></tr>
+<tr>
+<td colspan="20" style="border-bottom-left-radius: 5px; -moz-border-radius-bottomleft: 5px; -webkit-border-bottom-left-radius: 5px; -khtml-border-bottom-left-radius: 5px; -icab-border-bottom-left-radius: 5px; -o-border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; -moz-border-radius-bottomright: 5px; -webkit-border-bottom-right-radius: 5px; -khtml-border-bottom-right-radius: 5px; -icab-border-bottom-right-radius: 5px; -o-border-bottom-right-radius: 5px;; background:#999; color:#FFF;"><small>This matchup table is used in <a href="/wiki/Generation_VI" title="Generation VI"><span style="color:#FFF;">Generation VI</span></a> onward.</small>
+</td></tr></tbody></table>
+                </tbody>
+            </table>
+        </div>
+    </details>
+</div>
+
+
+<!--JAVASCRIPT-->
+<script>
+// ============================================================
+// CONFIGURAÇÃO INICIAL
+// ============================================================
+
+// Mapa de gerações: qual ID começa e termina cada geração
+// Fonte: https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_National_Pok%C3%A9dex_number
+const GERACOES = {
+    1: { inicio: 1,   fim: 151  },
+    2: { inicio: 152, fim: 251  },
+    3: { inicio: 252, fim: 386  },
+    4: { inicio: 387, fim: 493  },
+    5: { inicio: 494, fim: 649  },
+    6: { inicio: 650, fim: 721  },
+    7: { inicio: 722, fim: 809  },
+    8: { inicio: 810, fim: 905  },
+    9: { inicio: 906, fim: 1025 },
+};
+
+// ============================================================
+// LÓGICA DE URL DOS ÍCONES DE TIPO
+// Esta função resolve o seu problema dos ícones sem precisar
+// baixar nada. Ela monta a URL dinamicamente com o nome do tipo.
+// ============================================================
+function getTypeIconUrl(nomeTipo) {
+    // O serebii.net usa o nome do tipo em minúsculo na URL.
+    // Ex: "grass" → "https://www.serebii.net/pokedex-sv/type/icon/grass.png"
+    // O nome já vem em minúsculo da PokéAPI, então não precisamos transformar.
+    return `https://www.serebii.net/pokedex-sv/type/icon/${nomeTipo}.png`;
+}
+
+// ============================================================
+// FUNÇÃO PRINCIPAL: BUSCAR E RENDERIZAR OS POKÉMONS
+// ============================================================
+
+// "async" transforma a função em assíncrona — ela pode usar "await" dentro
+async function carregarPokemons(geracaoId) {
+    const grid = document.getElementById('pokemon-grid');
+    const loadingMsg = document.getElementById('loading-msg');
+
+    // Limpa o grid antes de carregar uma nova geração
+    grid.innerHTML = '<p id="loading-msg" style="font-family: sans-serif; color: #333; padding: 20px;">Carregando... 🔄</p>';
+
+    // Pega o intervalo de IDs da geração selecionada
+    const { inicio, fim } = GERACOES[geracaoId] || GERACOES[1];
+
+    // Loop de inicio até fim (ex: 1 até 151 para Geração 1)
+    for (let id = inicio; id <= fim; id++) {
+
+        // "await" pausa aqui até o fetch terminar.
+        // O try/catch captura erros (ex: internet caiu, ID inválido)
+        try {
+            // --- CHAMADA 1: Dados básicos do Pokémon ---
+            // fetch() retorna uma "Promise" (promessa de dado futuro)
+            // .json() converte o texto da resposta para um objeto JavaScript
+            const respostaPokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+            const dadosPokemon = await respostaPokemon.json();
+
+            // --- CHAMADA 2: Espécie (para pegar a descrição e a geração) ---
+            const respostaEspecie = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`);
+            const dadosEspecie = await respostaEspecie.json();
+
+            // --------------------------------------------------------
+            // EXTRAINDO OS DADOS que nos interessam do JSON retornado
+            // --------------------------------------------------------
+
+            // Nome: a API retorna em minúsculo ("bulbasaur")
+            // charAt(0).toUpperCase() coloca a primeira letra em maiúscula
+            const nome = dadosPokemon.name.charAt(0).toUpperCase() + dadosPokemon.name.slice(1);
+
+            // Número formatado: padStart(3, '0') garante sempre 3 dígitos
+            // Ex: id=1 → "001", id=25 → "025", id=151 → "151"
+            const numero = String(id).padStart(3, '0');
+
+            // Sprite: caminho dentro do JSON para a sprite Black/White (Gen V)
+            // dadosPokemon.sprites → front_default sempre existe como fallback
+            const sprite = dadosPokemon.sprites?.versions?.['generation-v']?.['black-white']?.animated?.front_default
+                        || dadosPokemon.sprites?.versions?.['generation-v']?.['black-white']?.front_default
+                        || dadosPokemon.sprites?.front_default;
+
+            // Tipos: a API retorna um array. Extraímos só o nome de cada tipo.
+            // Ex: [{ slot: 1, type: { name: "grass" } }, { slot: 2, type: { name: "poison" } }]
+            const tipos = dadosPokemon.types.map(t => t.type.name);
+
+            // Descrição em Português (se não achar, tenta inglês)
+            // A API retorna várias flavor_text_entries em idiomas diferentes
+            // O "|| ''" evita erro se não encontrar nenhuma
+            const entradas = dadosEspecie.flavor_text_entries;
+            const descPt = entradas.find(e => e.language.name === 'pt-BR')?.flavor_text;
+            const descEn = entradas.find(e => e.language.name === 'en')?.flavor_text;
+            // \f e \n são caracteres de quebra de linha que vêm da API — removemos eles
+            const descricao = (descPt || descEn || 'Descrição não disponível.')
+                                .replace(/\f|\n/g, ' ');
+
+            // Geração (para a classe CSS "geracao-1", "geracao-2", etc.)
+            // A API retorna "generation-i", "generation-ii"... precisamos converter para número
+            const nomeGeracao = dadosEspecie.generation.name; // ex: "generation-i"
+            const numeroGeracao = converterGeracao(nomeGeracao);
+
+            // --------------------------------------------------------
+            // MONTANDO O HTML DO CARD
+            // Template literal (crase) permite escrever HTML com variáveis ${}
+            // --------------------------------------------------------
+
+            // Monta os ícones de tipo dinamicamente
+            // Se o Pokémon tiver 2 tipos, gera 2 <img>. Se tiver 1, gera só 1.
+            const iconesTipo = tipos.map(tipo =>
+                `<img src="${getTypeIconUrl(tipo)}" alt="${tipo}" class="type-icon">`
+            ).join(''); // .join('') une o array em uma string sem separador
+
+            const cardHTML = `
+                <div class="pokemon-card geracao-${numeroGeracao}">
+                    <span class="pokedex-number">#${numero}</span>
+                    <img src="${sprite}" alt="${nome}" class="pokemon-sprite">
+                    <h3 class="pokemon-name">${nome}</h3>
+                    <div class="pokemon-types">
+                        ${iconesTipo}
+                    </div>
+                    <div class="pokedex-description">
+                        <p>${descricao}</p>
+                    </div>
+                </div>
+            `;
+
+            // Injeta o card no grid (innerHTML += adiciona ao final)
+            grid.innerHTML += cardHTML;
+
+        } catch (erro) {
+            // Se um Pokémon falhar, apenas loga o erro e continua o loop
+            console.error(`Erro ao carregar Pokémon #${id}:`, erro);
+        }
+    }
+
+    // Remove a mensagem de "Carregando..." se ainda estiver lá
+    document.getElementById('loading-msg')?.remove();
+}
+
+// ============================================================
+// FUNÇÃO AUXILIAR: Converte nome de geração para número
+// ============================================================
+function converterGeracao(nomeGeracao) {
+    // A API usa algarismos romanos: "generation-i" até "generation-ix"
+    const mapa = {
+        'generation-i':    1,
+        'generation-ii':   2,
+        'generation-iii':  3,
+        'generation-iv':   4,
+        'generation-v':    5,
+        'generation-vi':   6,
+        'generation-vii':  7,
+        'generation-viii': 8,
+        'generation-ix':   9,
+    };
+    return mapa[nomeGeracao] || 1; // Retorna 1 como padrão se não encontrar
+}
+
+// ============================================================
+// FILTRO DE GERAÇÃO (substitui seu script original)
+// Agora em vez de esconder/mostrar cards, RECARREGA a geração
+// ============================================================
+const seletor = document.getElementById('geracao');
+
+seletor.addEventListener('change', function() {
+    const valorSelecionado = seletor.value;
+
+    if (valorSelecionado === 'todas') {
+        // Atenção: carregar TODOS os 1000+ pokémons de uma vez
+        // vai ser muito lento. Por isso aviso o usuário.
+        // No futuro, você pode implementar paginação aqui!
+        alert('⚠️ Carregar todas as gerações pode demorar bastante. Recomendo selecionar uma por vez!');
+        return;
+    }
+
+    carregarPokemons(Number(valorSelecionado));
+});
+
+// ============================================================
+// INICIALIZAÇÃO: Carrega a Geração 1 quando a página abre
+// ============================================================
+carregarPokemons(1);
+</script>
+</body>
+</html>
