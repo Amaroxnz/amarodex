@@ -1,0 +1,200 @@
+/* Importação da Fonte (caso não esteja no HTML) */
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Essencial para ADS: garante que bordas não aumentem o tamanho do elemento */
+}
+
+body {
+    background-color: rgba(98, 19, 109, 0.733);
+    font-family: 'Bungee', cursive;
+    color: white;
+} 
+/*arrumando logo */
+.header-container {
+    text-align: center;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.logo-box {
+    background-color: rgba(96, 51, 126, 0.603);
+    color: rgb(226, 226, 226);
+    border: 3px solid black;
+    padding: 15px 30px;
+    display: inline-block;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+    vertical-align: -06px; /* Alinha a Pokébola com o centro do texto */
+    margin: 0 5px;
+}
+
+/* arrumando as secoes */
+.menu-section {
+    display: block;
+    width: 85%;
+    margin: 20px auto; /* Centraliza a barra amarela */
+    border: 2px solid rgb(250, 229, 38);
+    padding: 10px;
+    text-align: left;
+    background-color: yellow;
+    color: black;
+}
+
+.menu-section summary {
+    cursor: pointer;
+    outline: none;
+}
+
+.pokemon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 20px;
+    padding: 15px;
+}
+
+.pokemon-card {
+    border: 2px solid black;
+    padding: 15px;
+    text-align: center;
+    background-color: #478a2d7e;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.pokemon-card:hover {
+    transform: translateY(-10px);
+    background-color: #5ba33a; /* Dá um destaque no hover */
+}
+
+.pokemon-card img {
+    width: 130px;
+    height: auto;
+    image-rendering: pixelated; /* Mantém a sprite clássica nítida */
+}
+/* Container para alinhar as seções centrais */
+.main-content {
+    text-align: center;
+    width: 100%;
+}
+
+/* Estilo padrão para as barras amarelas (Damage e VGC) */
+.menu-section {
+    display: inline-block;
+    width: 80%;
+    border: 2px solid rgb(250, 229, 38);
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: left;
+    background-color: yellow;
+    color: black; /* Garante que o texto fique legível no fundo amarelo */
+}
+
+.menu-section summary {
+    font-family: 'Bungee', cursive;
+    cursor: pointer;
+    outline: none;
+}
+
+/* Estilo para os títulos e links dentro dos blocos */
+.menu-section h3 {
+    font-size: 1.1rem;
+    margin: 10px 0;
+}
+
+.menu-section a {
+    color: #4b0082;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu-section a:hover {
+    text-decoration: underline;
+}
+
+/* Ajuste para a Tabela de Fraquezas */
+.table-wrapper {
+    overflow-x: auto; /* Permite rolar a tabela no celular sem quebrar o site */
+    margin-top: 15px;
+}
+
+.roundy {
+    border-collapse: collapse;
+    font-family: sans-serif; /* Melhora a leitura dos números na tabela */
+}
+/* Card principal */
+.pokemon-card {
+    position: relative; /* Necessário para posicionar a descrição se quiser sobrepor */
+    border: 2px solid black;
+    padding: 15px;
+    text-align: center;
+    background-color: #478a2d7e;
+    border-radius: 10px;
+    overflow: hidden; /* Garante que nada saia das bordas arredondadas */
+    transition: all 0.4s ease; /* Transição suave para o card todo */
+}
+
+/* Esconde a descrição por padrão */
+.pokedex-description {
+    max-height: 0; /* Começa com altura zero */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    font-size: 0.85rem;
+    margin-top: 0;
+    color: #eee;
+    font-family: sans-serif; /* Fonte mais lida para textos longos */
+}
+
+/* --- O EFEITO DE HOVER --- */
+
+.pokemon-card:hover {
+    transform: translateY(-10px);
+    background-color: #5ba33a;
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.3);
+}
+
+/* Quando o mouse passa no CARD, a DESCRIÇÃO aparece */
+.pokemon-card:hover .pokedex-description {
+    max-height: 100px; /* Define um tamanho máximo para expandir */
+    opacity: 1;
+    visibility: visible;
+    margin-top: 10px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 10px;
+}
+
+/* Estilo do Número (#001) */
+.pokedex-number {
+    font-size: 0.9rem;
+    font-weight: bold;
+    display: block;
+    text-align: left;
+    color: rgba(255, 255, 255, 0.6);
+}
+/* Container que segura os ícones */
+.pokemon-types {
+    display: flex;
+    justify-content: center; /* Centraliza os ícones no card */
+    gap: 8px; /* Dá um espacinho de 8px entre os ícones */
+    margin-bottom: 10px;
+}
+
+/* Tamanho e visual dos ícones */
+.type-icon {
+    width: 35px; /* Ajuste esse valor dependendo do tamanho da imagem original */
+    height: auto;
+    /* Um pequeno sombreado para dar destaque caso o card tenha uma cor parecida com o ícone */
+    filter: drop-shadow(1px 2px 2px rgba(0, 0, 0, 0.4)); 
+    transition: transform 0.2s ease;
+}
+
+/* Um efeitinho extra: o ícone dá um pequeno 'pulo' se você passar o mouse direto nele */
+.type-icon:hover {
+    transform: scale(1.1);
+}
